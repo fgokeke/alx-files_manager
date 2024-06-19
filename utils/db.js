@@ -21,6 +21,15 @@ class DBClient {
     this.client.connect();
   }
 
+  async connect() {
+    try {
+      await this.client.connect();
+      console.log('MongoDB connected successfully');
+    } catch (error) {
+      console.error('Error connecting to MongoDB:', error);
+    }
+  }
+
   /**
    * Checks if this client's connection to the MongoDB server is active.
    * @returns {boolean}
